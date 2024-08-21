@@ -21,8 +21,8 @@ let sendmail = () => {
     From: "kmblak8@gmail.com",
     Subject: "Account confirmation",
     Body: "your account has been verified",
-  });
- ;
+  }).then((message) => alert(message));
+  console.log("hello");
 };
 let pop = ref(false);
 
@@ -132,7 +132,7 @@ const submit = () => {
               />
             </div>
           </div>
-          <div @click="pop = true">
+          <div @click="() => { if (isValid) pop = true}">
             <button
               class="font-bold bg-CharcoalGrey hover:bg-gradient-to-r from-gl to-gr p-4 mb-3 text-white rounded-md w-full"
               id="btn"
@@ -145,7 +145,7 @@ const submit = () => {
       </div>
     </div>
 
-    <div class="popup" :class="{ openpopup: pop }" id="popup">
+    <div v-if="isValid" class="popup" :class="{ openpopup: pop }" id="popup">
       <div class="w-[400px] p-7 rounded-[15px] bg-white mx-auto">
         <img
           src="../img/icon-success.svg"
