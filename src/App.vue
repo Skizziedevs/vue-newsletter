@@ -21,8 +21,8 @@ let sendmail = () => {
     From: "kmblak8@gmail.com",
     Subject: "Account confirmation",
     Body: "your account has been verified",
-  }).then((message) => alert(message));
-  console.log("hello");
+  });
+ ;
 };
 let pop = ref(false);
 
