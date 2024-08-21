@@ -9,6 +9,7 @@ export default {
       sm: '600px',
       md: '768px',
       lg: '976px',
+      dt: '1280px',
       xl: '1440px',
     },
     extend: {

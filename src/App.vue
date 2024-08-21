@@ -4,7 +4,7 @@ let email = ref("");
 let isValid = ref();
 let red = ref(false);
 let validation = () => {
-  const pattern =  '^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{3,4}$';
+  const pattern =  '^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$';
   if (email.value.match(pattern)) {
     isValid.value = true;
   } else {
@@ -16,7 +16,7 @@ let sendmail = () => {
   Email.send({
     Host: "smtp.elasticemail.com",
     Username: "kmblak8@gmail.com",
-    Password: "17114B6058BD304FCFFB88B9CE009C4CFCE3",
+    Password: "98D64FB709689FC76B1FFC8ED62E365D1450",
     To: email.value,
     From: "kmblak8@gmail.com",
     Subject: "Account confirmation",
@@ -32,13 +32,13 @@ const submit = () => {
 </script>
 
 <template>
-  <body class="w-full h-[100vh] bg-CharcoalGrey">
+  <body class="w-full h-[640px]  bg-CharcoalGrey">
     <div
-      class="bg-white rounded-3xl w-[100%] mx-auto sm:relative sm:top-16  sm:w-[800px] sm:h-[495px] sm:my-0 sm:flex sm:flex-row-reverse"
+      class="bg-white md:rounded-3xl w-[100%] mx-auto sm:relative sm:top-16  sm:w-[720px] h-[900px] sm:h-[495px] sm:my-0 sm:flex sm:flex-row-reverse"
       :class="{ hidden: pop }"
     >
       <!--first-div-->
-      <div class="py-[10px] " :class="{ hidden: pop }">
+      <div class="md:py-[10px] " :class="{ hidden: pop }">
         <picture>
           <source
             media="(min-width: 600px)"
@@ -55,18 +55,18 @@ const submit = () => {
       </div>
       <!--second div-->
       <div
-        class="px-8 h-[100%] w-[100%] md:w-[50%] sm:px-2 sm:mx-auto sm:pt-5"
+        class="px-8  w-[100%] md:w-[50%] sm:px-2 sm:mx-auto sm:pt-5"
         :class="{ hidden: pop }"
       >
         <div>
-          <h1 class="text-CharcoalGrey font-bold text-5xl my-7 sm:text-5xl">
+          <h1 class="text-CharcoalGrey  font-bold text-5xl my-7 sm:text-5xl">
             Stay updated!
           </h1>
           <p class="text-[16px]">
             Join 60,000+ product managers receiving monthly updates on:
           </p>
         </div>
-        <div class="mt-5 mb-3">
+        <div class="mt-4 mb-3">
           <ul>
             <li class="flex mb-2">
               <img
@@ -156,7 +156,7 @@ const submit = () => {
         />
         <h2 class="text-start">Thank you for your subscribing</h2>
         <p>
-          a confirmation email has been sent to
+          A confirmation email has been sent to
           <span class="font-bold" id="out">{{ email }}</span> please open it and
           click on the button inside to confirm subscription
         </p>
